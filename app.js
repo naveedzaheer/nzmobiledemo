@@ -20,7 +20,7 @@ var mobileApp = azureMobileApps({
     homePage: true,
     // Explicitly enable swagger support. UI support is enabled by
     // installing the swagger-ui npm module.
-    // swagger: true,
+    swagger: true,
     // App will use MS_SqliteFilename or MS_TableConnectionString to choose the SQLite or SQL data provider
     data: {
         dynamicSchema: true
