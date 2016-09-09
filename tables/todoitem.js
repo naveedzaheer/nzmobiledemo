@@ -11,6 +11,21 @@ var azureMobileApps = require('azure-mobile-apps');
 // Create a new table definition
 var table = azureMobileApps.table();
 
+// Table Definition 
+table.name = 'todoitem';
+table.schema = 'dbo';
+table.databaseTableName = 'todoitem';
+table.maxTop = 1000;
+table.dynamicSchema = false;
+table.columns = {
+    userid: 'string',
+    text: 'string',
+    category: 'string',
+    due: 'datetime',
+    alert: 'number',
+    complete: 'boolean'
+};
+
 // Configure specific code when the client does a request
 // READ - only return records belonging to the authenticated user
 // table.read(function (context) {
