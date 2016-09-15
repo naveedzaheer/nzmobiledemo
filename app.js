@@ -9,6 +9,29 @@ var express = require('express'),
 // Set up a standard Express app
 var app = express();
 
+// var router = express.Router();
+
+// // router.get('/category/:category', function (req, res, next) {
+// //         console.log("started setup api/note routing");
+// //         // req.azureMobile.tables('todoitem')
+// //         //     .where({ category: req.params.category })
+// //         //     .read()
+// //         //     .then(function (results) { return res.json(results); })
+// //         //     .catch(next); // it is important to catch any errors and log them
+
+// //         res.send(200, "Hello");
+// //         console.log("end setup api/note routing");
+
+// //         next();
+// //     });
+
+// router.get('/', function(req, res) {
+//     res.json({ message: 'hooray! welcome to our api!' });   
+// });
+
+
+// app.use("/api", router);
+
 // If you are producing a combined Web + Mobile app, then you should handle
 // anything like logging, registering middleware, etc. here
 
