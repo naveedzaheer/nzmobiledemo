@@ -43,6 +43,8 @@ var api = {
 
     get: function (req, res, next) {
         var userName = "nzaheer";
+        console.info(JSON.stringify(req.azureMobile.user));
+        
         var query = new azure.TableQuery()
             .top(100)
             .where("PartitionKey eq ?", userName);
