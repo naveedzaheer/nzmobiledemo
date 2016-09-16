@@ -57,5 +57,6 @@ table.delete(function (context) {
 
 // Finally, export the table to the Azure Mobile Apps SDK - it can be
 // read using the azureMobileApps.tables.import(path) method
+table.access = 'authenticated';
 
 module.exports = table;
