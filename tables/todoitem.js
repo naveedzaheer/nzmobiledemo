@@ -11,6 +11,8 @@ var azureMobileApps = require('azure-mobile-apps');
 // Create a new table definition
 var table = azureMobileApps.table();
 
+table.access = 'authenticated';
+
 // Table Definition 
 table.name = 'todoitem';
 table.schema = 'dbo';
@@ -57,6 +59,5 @@ table.delete(function (context) {
 
 // Finally, export the table to the Azure Mobile Apps SDK - it can be
 // read using the azureMobileApps.tables.import(path) method
-table.access = 'authenticated';
 
 module.exports = table;
