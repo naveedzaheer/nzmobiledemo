@@ -27,6 +27,7 @@ var api = {
             userId: entityGen.String(userName),
             noteData: entityGen.String(req.body.notes)
         };
+        console.info("Creating Entity");
         tableService.insertEntity("notes", entity, function(error, result, response) {
         if (error) {
             console.warn(error);
@@ -46,6 +47,7 @@ var api = {
             .top(100)
             .where("PartitionKey eq ?", userName);
 
+        console.info("Getting Entities");
         tableService.queryEntities('notes', query, null, function(error, result, response) {
         if (error) {
             console.warn(error);
@@ -66,6 +68,7 @@ var api = {
             RowKey: entityGen.String(req.body.key)
         };
 
+        console.info("Deleting Entities");
         tableService.deleteEntity('notes', entity, function(error, response) {
         if (error) {
             console.warn(error);
