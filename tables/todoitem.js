@@ -11,7 +11,7 @@ var azureMobileApps = require('azure-mobile-apps');
 // Create a new table definition
 var table = azureMobileApps.table();
 
-table.access = 'authenticated';
+//table.access = 'authenticated';
 
 // Table Definition 
 table.name = 'todoitem';
@@ -31,14 +31,14 @@ table.columns = {
 // Configure specific code when the client does a request
 // READ - only return records belonging to the authenticated user
 table.read(function (context) {
-  console.info("user name -", context.user.id);
+  console.info("user name -", JSON.stringify(context.user));
    //context.query.where({ userId: context.user.id });
    return context.execute();
 });
 
 // CREATE - add or overwrite the userId based on the authenticated user
 table.insert(function (context) {
-  console.info("user name -", context.user.id);
+  console.info("user name -", JSON.stringify(context.user));
     //context.item.userId = context.user.id;
    return context.execute();
 });
@@ -46,14 +46,14 @@ table.insert(function (context) {
 // UPDATE - for this scenario, we don't need to do anything - this is
 // the default version
 table.update(function (context) {
-  console.info("user name -", context.user.id);
+  console.info("user name -", JSON.stringify(context.user));
   return context.execute();
 });
 
 // DELETE - for this scenario, we don't need to do anything - this is
 // the default version
 table.delete(function (context) {
-  console.info("user name -", context.user.id);
+  console.info("user name -", JSON.stringify(context.user));
   return context.execute();
 });
 
